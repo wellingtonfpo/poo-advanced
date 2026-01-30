@@ -1,6 +1,6 @@
 import java.util.stream.IntStream;
 
-public class Main {
+public class IntStreamOperations {
     /**
      * {@code IntStream()}
      * <p>Do pacote java.util.stream é um fluxo especializado para manipular valores int.</p>
