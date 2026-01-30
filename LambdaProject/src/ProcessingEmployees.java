@@ -24,7 +24,8 @@ public class ProcessingEmployees {
                 .sorted(Comparator.comparing(Employee::getSalary).reversed())
                 .toList();
 
-        System.out.println("\nEmployees sorted by Salary:");
+        System.out.println();
+        System.out.println("Employees sorted by Salary:");
         sortedBySalary.forEach(System.out::println);
     }
 }
