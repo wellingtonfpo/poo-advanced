@@ -27,5 +27,14 @@ public class ProcessingEmployees {
         System.out.println();
         System.out.println("Employees sorted by Salary:");
         sortedBySalary.forEach(System.out::println);
+
+        System.out.println();
+
+        Predicate<Employee> fiveToTenThousand = e -> (e.getSalary() >= 5000.0 && e.getSalary() <= 10000.0);
+        System.out.println("Employee earnings between $5,000 and $10,000");
+        employees.stream().filter(fiveToTenThousand)
+                .sorted(Comparator.comparing(Employee::getSalary))
+                .forEach(System.out::println);
+
     }
 }
