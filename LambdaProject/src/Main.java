@@ -22,22 +22,22 @@ public class Main {
 
         //sum of values via reduce method
         System.out.printf("Sum via reduce method: %d%n", IntStream.of(values)
-                                                                  .reduce(0, (x, y) -> x + y));
+                .reduce(0, (x, y) -> x + y));
 
         //sum of squares via reduce method
         System.out.printf("Sum of squares via reduce method: %d%n", IntStream.of(values)
-                                                                             .reduce(0, (x, y) -> x + y * y));
+                .reduce(0, (x, y) -> x + y * y));
 
         //product of values via reduce method
         System.out.printf("Product via reduce method: %d%n", IntStream.of(values)
-                                                                      .reduce(1, (x, y) -> x * y));
+                .reduce(1, (x, y) -> x * y));
 
         //even values sorted
-        System.out.print("Even values sorted: ");
+        System.out.print("Ordered even values: ");
         IntStream.of(values)
-                 .filter(value -> value % 2 == 0)
-                 .sorted()
-                 .forEach(value -> System.out.printf("%d ", value));
+                .filter(value -> value % 2 == 0)
+                .sorted()
+                .forEach(value -> System.out.printf("%d ", value));
         System.out.println();
 
         //sum range 1-10, exclusive
