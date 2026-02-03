@@ -35,6 +35,5 @@ public class ProcessingEmployees {
         employees.stream().filter(fiveToTenThousand)
                 .sorted(Comparator.comparing(Employee::getSalary))
                 .forEach(System.out::println);
-
     }
 }
