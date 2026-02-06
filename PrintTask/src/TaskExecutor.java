@@ -8,12 +8,14 @@ void main() {
 
     System.out.println("Starting Executor");
 
-    ExecutorService executorService = Executors.newCachedThreadPool();
+    try (ExecutorService executorService = Executors.newCachedThreadPool()) {
+        executorService.execute(task1);
+        executorService.execute(task2);
+        executorService.execute(task3);
 
-    executorService.execute(task1);
-    executorService.execute(task2);
-    executorService.execute(task3);
-    executorService.close();
+        executorService.shutdown();
 
-    System.out.printf("Tasks started, main ends.%n%n");
+        System.out.printf("Tasks started, main ends.%n%n");
+    }
+
 }
