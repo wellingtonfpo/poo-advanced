@@ -1,3 +1,5 @@
+package br.com.srp.booking;
+
 import java.util.Date;
 
 class BookingValidator {

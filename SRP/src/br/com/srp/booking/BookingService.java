@@ -1,3 +1,5 @@
+package br.com.srp.booking;
+
 class BookingService {
     public void processBooking(BookingData bookingData) {
         // validate booking data
