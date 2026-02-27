@@ -1,4 +1,4 @@
-package audioencoder;
+package encoder.audio;
 
 import java.io.File;
 

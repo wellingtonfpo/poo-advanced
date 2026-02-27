@@ -1,4 +1,4 @@
-package audioencoder;
+package encoder.audio;
 
 import ws.schild.jave.Encoder;
 import ws.schild.jave.MultimediaObject;

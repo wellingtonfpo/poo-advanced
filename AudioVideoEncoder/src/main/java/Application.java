@@ -1,4 +1,4 @@
-import audioencoder.*;
+import encoder.audio.*;
 
 void main() {
     File sourceFile = new File("audio.m4a");
