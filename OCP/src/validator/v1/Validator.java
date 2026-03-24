@@ -1,8 +1,8 @@
-package validator;
+package validator.v1;
 
 import java.util.regex.Pattern;
 
-public class ValidatorV1 {
+public class Validator {
     private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@(.+)$";
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
     private static final String PHONE_REGEX = "^[0-9]{10}$";
