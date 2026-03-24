@@ -1,4 +1,6 @@
-class ReportProcessor {
+package report;
+
+public class ReportProcessor {
     public void process(String type) {
         if (type.equals("PDF")) {
             System.out.println("Processing PDF report...");
