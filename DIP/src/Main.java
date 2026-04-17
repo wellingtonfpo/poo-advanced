@@ -1,7 +1,6 @@
 import interfaces.*;
-import repository.MySqlUserRepository;
+import repository.*;
 import service.UserService;
-//import repository.PostgresUserRepository;
 
 void main() {
     SimpleDIContainer container = new SimpleDIContainer();
