@@ -1,34 +1,7 @@
 import java.sql.*;
 
-private Connection connectDatabase() {
-    String DATABASE_URL = "jdbc:sqlite:src/main/resources/books.db";
-
-    try {
-        Connection connection = DriverManager.getConnection(DATABASE_URL);
-
-        if (connection != null) {
-            DatabaseMetaData metaData = connection.getMetaData();
-
-            System.out.println("Driver Name: " + metaData.getDriverName());
-
-            // check if database is existing or new
-            if (metaData.getDatabaseProductVersion().isEmpty()) {
-                System.out.println("A new database has been created.");
-            }
-
-            System.out.println("Connected to the database successfully!");
-            System.out.println();
-
-            return connection;
-        }
-    } catch (SQLException e) {
-        System.out.println(e.getMessage());
-    }
-    return null;
-}
-
 void main() {
-    try (Connection connection = connectDatabase()) {
+    try (Connection connection = ConfigDatabase.connect()) {
         final String QUERY = "SELECT authorID, firstName, lastName FROM authors";
 
         System.out.printf("Authors Table of Books Database%n");
@@ -54,5 +27,6 @@ void main() {
         }
     } catch (SQLException e) {
         System.out.println(e.getMessage());
+        System.exit(1);
     }
 }
