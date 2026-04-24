@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .kotlin
+target
 
 ### Eclipse ###
 .apt_generated
@@ -31,3 +32,6 @@ bin/
 
 *.m4a
 *.mp3
+
+### DB Files ###
+*.db
