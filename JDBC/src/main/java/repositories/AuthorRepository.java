@@ -33,4 +33,30 @@ public class AuthorRepository {
             return null;
         }
     }
+
+    public Author getAuthorById(int id) {
+        Author author = null;
+        var sql = "SELECT authorID, firstName, lastName FROM authors WHERE authorID = ?";
+
+        try (CachedRowSet rowSet = Database.connectRowSet()) {
+            if (rowSet != null) {
+                rowSet.setCommand(sql);
+                rowSet.setInt(1, id);
+                rowSet.execute();
+
+                if (rowSet.next()) {
+                    author = new Author();
+                    author.setId(rowSet.getInt("authorID"));
+                    author.setFirstName(rowSet.getString("firstName"));
+                    author.setLastName(rowSet.getString("lastName"));
+                }
+            }
+
+            return author;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
+            return null;
+        }
+    }
 }
