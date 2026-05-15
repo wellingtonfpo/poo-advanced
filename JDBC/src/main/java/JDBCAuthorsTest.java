@@ -1,7 +1,9 @@
+import config.Database;
+
 import java.sql.*;
 
 void main() {
-    try (Connection connection = ConfigDatabase.connect()) {
+    try (Connection connection = Database.connect()) {
         final String QUERY = "SELECT authorID, firstName, lastName FROM authors";
 
         System.out.printf("Authors Table of Books Database%n");
