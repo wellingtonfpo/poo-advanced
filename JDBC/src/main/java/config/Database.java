@@ -1,6 +1,10 @@
+package config;
+
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetProvider;
 import java.sql.*;
 
-public class ConfigDatabase {
+public class Database {
     public static Connection connect() {
         final String DATABASE_URL = "jdbc:sqlite:src/main/resources/books.db";
 
@@ -22,6 +26,19 @@ public class ConfigDatabase {
 
                 return connection;
             }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public static CachedRowSet connectRowSet() {
+        final String DATABASE_URL = "jdbc:sqlite:src/main/resources/books.db";
+
+        try {
+            CachedRowSet rowSet = RowSetProvider.newFactory().createCachedRowSet();
+            rowSet.setUrl(DATABASE_URL);
+            return rowSet;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
