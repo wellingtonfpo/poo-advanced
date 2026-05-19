@@ -1,12 +1,13 @@
 import dao.ClientDao;
 import dao.Dao;
+import dao.IClientDao;
 import dao.ProductDao;
 import models.Client;
 import models.Product;
 import utils.JPAUtil;
 
 void main() {
-    Dao<Client, Long> clientDao = new ClientDao();
+    IClientDao clientDao = new ClientDao();
     Dao<Product, Long> productDao = new ProductDao();
 
     System.out.println("--- CADASTRANDO DADOS ---");
@@ -54,6 +55,10 @@ void main() {
 
     System.out.println("--- BUSCANDO TODOS OS CLIENTES APÓS DELEÇÃO ---");
     clientDao.findAll().forEach(System.out::println);
+
+    System.out.println("--- BUSCANDO UM CLIENTE POR EMAIL ---");
+    Client clientByEmail = clientDao.findByEmail("joao.silva@example");
+    System.out.println("Cliente encontrado: " + clientByEmail);
 
     JPAUtil.closeFactory();
 }
