@@ -2,6 +2,8 @@ package dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
+
+import dao.interfaces.IClientDao;
 import models.Client;
 import utils.JPAUtil;
 

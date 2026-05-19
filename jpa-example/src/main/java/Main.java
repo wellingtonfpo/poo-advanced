@@ -1,6 +1,6 @@
 import dao.ClientDao;
-import dao.Dao;
-import dao.IClientDao;
+import dao.interfaces.Dao;
+import dao.interfaces.IClientDao;
 import dao.ProductDao;
 import models.Client;
 import models.Product;

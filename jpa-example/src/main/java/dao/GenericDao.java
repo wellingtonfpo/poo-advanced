@@ -1,5 +1,6 @@
 package dao;
 
+import dao.interfaces.Dao;
 import jakarta.persistence.EntityManager;
 import utils.JPAUtil;
 
