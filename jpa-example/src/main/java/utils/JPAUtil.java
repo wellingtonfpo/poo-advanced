@@ -8,6 +8,10 @@ public class JPAUtil {
     private static final EntityManagerFactory FACTORY =
             Persistence.createEntityManagerFactory("default");
 
+    private JPAUtil() {
+        throw new UnsupportedOperationException("Utility class");
+    }
+
     public static EntityManager getEntityManager() {
         return FACTORY.createEntityManager();
     }

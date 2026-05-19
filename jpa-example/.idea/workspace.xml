@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05a03cd4-1b66-4b20-bdbf-763647d582d2" name="Changes" comment="implement DAO pattern for Client and Product entities with JPA integration">
+    <list default="true" id="05a03cd4-1b66-4b20-bdbf-763647d582d2" name="Changes" comment="refactor package structure for DAO interfaces and implementations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/JPAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JPAUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +146,8 @@
       <workItem from="1778842240259" duration="1695000" />
       <workItem from="1778847838202" duration="4068000" />
       <workItem from="1778867135053" duration="2270000" />
-      <workItem from="1779226236619" duration="825000" />
+      <workItem from="1779226236619" duration="1015000" />
+      <workItem from="1779229459360" duration="349000" />
     </task>
     <task id="LOCAL-00001" summary="add Client and Product models with JPA annotations and persistence configuration">
       <option name="closed" value="true" />
@@ -173,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778870277786</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implement findByEmail method in ClientDao and create IClientDao interface">
+      <option name="closed" value="true" />
+      <created>1779227096882</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779227096882</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactor package structure for DAO interfaces and implementations">
+      <option name="closed" value="true" />
+      <created>1779227211962</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779227211962</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +198,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Client and Product models with JPA annotations and persistence configuration" />
     <MESSAGE value="implement DAO pattern for Client and Product entities with JPA integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement DAO pattern for Client and Product entities with JPA integration" />
+    <MESSAGE value="implement findByEmail method in ClientDao and create IClientDao interface" />
+    <MESSAGE value="refactor package structure for DAO interfaces and implementations" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor package structure for DAO interfaces and implementations" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
