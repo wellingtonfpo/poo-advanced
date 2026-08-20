@@ -4,57 +4,41 @@ import br.com.ligton.app.car.domain.Driver;
 
 import br.com.ligton.app.car.domain.DriverRepository;
 import lombok.RequiredArgsConstructor;
-// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor // Uso do Lombok para gerar o construtor com os campos finais
+@RequiredArgsConstructor
 @RestController
-@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path="drivers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DriverAPI {
-
-    // Abordagem 1: Injeção de dependência diretamente no atributo (Não recomendada)
-    // @Autowired
-    // DriverRepository driverRepository;
-
-    // Abordagem 2: Injeção de dependência via construtor (Recomendada)
     private final DriverRepository driverRepository;
 
-    // public DriverAPI(DriverRepository driverRepository) {
-    //    this.driverRepository = driverRepository;
-    //}
 
-
-    @GetMapping("/drivers")
+    @GetMapping
     public List<Driver> listDrivers() {
         return driverRepository.findAll();
     }
 
-    @GetMapping("/drivers/{id}")
-    public Driver findDriver(@PathVariable("id") Long id) {
-
-        // Abordagem sem tratamento de exceção, retorna 500 se o ID não for encontrado
-        // return driverRepository.findById(id).get();
-
+    @GetMapping("{id}")
+    public Driver findDriver(@PathVariable Long id) {
         return driverRepository.findById(id).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
         );
     }
 
-    @PostMapping("/drivers")
+    @PostMapping
     public Driver createDriver(@RequestBody Driver driver) {
         return driverRepository.save(driver);
     }
 
-    @PutMapping("/drivers/{id}")
+    @PutMapping("{id}")
     public Driver fullUpdateDriver(@PathVariable Long id, @RequestBody Driver driver) { // Outra maneira de escrever o @PathVariable
 
         Driver foundDriver = findDriver(id);
@@ -63,7 +47,7 @@ public class DriverAPI {
         return driverRepository.save(foundDriver);
     }
 
-    @PatchMapping("/drivers/{id}")
+    @PatchMapping("{id}")
     public Driver partialUpdateDriver(@PathVariable Long id, @RequestBody Driver driver) {
         Driver foundDriver = findDriver(id);
 
@@ -75,7 +59,7 @@ public class DriverAPI {
         return driverRepository.save(foundDriver);
     }
 
-    @DeleteMapping("/drivers/{id}")
+    @DeleteMapping("{id}")
     public void deleteDriver(@PathVariable Long id) {
         driverRepository.deleteById(id);
     }
